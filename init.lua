@@ -12,21 +12,38 @@ dofile(MP .. "/get_auth_handler.lua")
 dofile(MP .. "/node_operations.lua")
 dofile(MP .. "/load_area.lua")
 
+local function createExecutionCondition(seconds)
+	local start = os.time()
+	local stop = start + seconds
+
+	return function()
+		return os.time() < stop
+	end
+end
+
 local function benchmark()
 	print("[mtbench] starting benchmarks")
 
 	for name, fn in pairs(mtbench.benchmarks) do
 		local bench_time = 1
-		local start = os.time()
-		local stop = start + bench_time
-
-		local function executeCondition()
-			return os.time() < stop
+		local iterations = 5
+		local min, max
+		local avg = 0
+		for _=1,iterations do
+			local executeCondition = createExecutionCondition(bench_time)
+			local result = fn(executeCondition)
+			if not min or result < min then
+				min = result
+			end
+			if not max or result > max then
+				max = result
+			end
+			avg = avg + (result / iterations)
 		end
 
-		local result = fn(executeCondition)
-
-		print("[mtbench][" .. name .. "] " .. result .. " iterations in " .. bench_time .. " seconds")
+		print("[mtbench][" .. name .. "] " ..
+			" min/max/avg " .. min .. "/" .. max .. "/" .. avg ..
+			" iterations in " .. bench_time .. " seconds")
 	end
 	print("[mtbench] benchmarks completed!")
 	minetest.request_shutdown("benchmarks completed", false, 0)

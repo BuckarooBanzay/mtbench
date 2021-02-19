@@ -19,16 +19,16 @@ Prints the result on the console and shuts the server down afterwards:
 
 ```
 [mtbench] starting benchmarks
-[mtbench][get_meta] 357244 iterations in 1 seconds
-[mtbench][load_area] 58314 iterations in 1 seconds
-[mtbench][check_player_privs] 102268 iterations in 1 seconds
-[mtbench][vmanip_read_aligned] 1413 iterations in 1 seconds
-[mtbench][vmanip_read_unaligned] 2053 iterations in 1 seconds
-[mtbench][get_node_timer] 470937 iterations in 1 seconds
-[mtbench][get_node_or_nil] 404147 iterations in 1 seconds
-[mtbench][get_auth_handler] 5147658 iterations in 1 seconds
-[mtbench][is_protected] 411708 iterations in 1 seconds
-[mtbench][get_node] 326029 iterations in 1 seconds
+[mtbench][get_meta]  min/max/avg 417752/444433/425825 iterations in 1 seconds
+[mtbench][load_area]  min/max/avg 17162/48216/39623 iterations in 1 seconds
+[mtbench][check_player_privs]  min/max/avg 95636/109644/103710.6 iterations in 1 seconds
+[mtbench][vmanip_read_aligned]  min/max/avg 947/1301/1174.6 iterations in 1 seconds
+[mtbench][vmanip_read_unaligned]  min/max/avg 1843/1961/1912.6 iterations in 1 seconds
+[mtbench][get_node_timer]  min/max/avg 341679/431836/366200.8 iterations in 1 seconds
+[mtbench][get_node_or_nil]  min/max/avg 304849/327796/319762.2 iterations in 1 seconds
+[mtbench][get_auth_handler]  min/max/avg 5226374/5328942/5292459.8 iterations in 1 seconds
+[mtbench][is_protected]  min/max/avg 324779/362279/340922.6 iterations in 1 seconds
+[mtbench][get_node]  min/max/avg 222810/237190/226423.4 iterations in 1 seconds
 [mtbench] benchmarks completed!
 ```
 
