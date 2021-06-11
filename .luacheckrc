@@ -5,5 +5,6 @@ globals = {
 read_globals = {
 	-- Minetest
 	"minetest",
-	"vector"
+	"vector",
+	"ItemStack"
 }
