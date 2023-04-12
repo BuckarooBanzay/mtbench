@@ -5,6 +5,7 @@ mtbench = {
 
 local MP = minetest.get_modpath("mtbench")
 dofile(MP .. "/api.lua")
+dofile(MP .. "/handle_async.lua")
 dofile(MP .. "/itemstack.lua")
 dofile(MP .. "/is_protected.lua")
 dofile(MP .. "/vmanip.lua")
