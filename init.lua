@@ -6,6 +6,7 @@ mtbench = {
 local MP = minetest.get_modpath("mtbench")
 dofile(MP .. "/api.lua")
 dofile(MP .. "/handle_async.lua")
+--[[
 dofile(MP .. "/itemstack.lua")
 dofile(MP .. "/is_protected.lua")
 dofile(MP .. "/vmanip.lua")
@@ -13,6 +14,7 @@ dofile(MP .. "/check_player_privs.lua")
 dofile(MP .. "/get_auth_handler.lua")
 dofile(MP .. "/node_operations.lua")
 dofile(MP .. "/load_area.lua")
+--]]
 
 local function createExecutionCondition(seconds)
 	local start = os.time()

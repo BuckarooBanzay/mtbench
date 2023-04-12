@@ -30,7 +30,7 @@ Prints the result on the console and shuts the server down afterwards:
 [mtbench][get_auth_handler]  min/max/avg 5226374/5328942/5292459.8 iterations in 1 seconds
 [mtbench][is_protected]  min/max/avg 324779/362279/340922.6 iterations in 1 seconds
 [mtbench][get_node]  min/max/avg 222810/237190/226423.4 iterations in 1 seconds
-[mtbench][handle_async]  min/max/avg 42533/47539/45012.2 iterations in 1 seconds
+[mtbench][handle_async]  min/max/avg 102789/115399/108321.4 iterations in 1 seconds
 [mtbench] benchmarks completed!
 ```
 
