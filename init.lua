@@ -6,15 +6,13 @@ mtbench = {
 local MP = minetest.get_modpath("mtbench")
 dofile(MP .. "/api.lua")
 dofile(MP .. "/handle_async.lua")
---[[
-dofile(MP .. "/itemstack.lua")
-dofile(MP .. "/is_protected.lua")
-dofile(MP .. "/vmanip.lua")
-dofile(MP .. "/check_player_privs.lua")
-dofile(MP .. "/get_auth_handler.lua")
-dofile(MP .. "/node_operations.lua")
-dofile(MP .. "/load_area.lua")
---]]
+-- dofile(MP .. "/itemstack.lua")
+-- dofile(MP .. "/is_protected.lua")
+-- dofile(MP .. "/vmanip.lua")
+-- dofile(MP .. "/check_player_privs.lua")
+-- dofile(MP .. "/get_auth_handler.lua")
+-- dofile(MP .. "/node_operations.lua")
+-- dofile(MP .. "/load_area.lua")
 
 local function createExecutionCondition(seconds)
 	local start = os.time()
@@ -30,10 +28,12 @@ local function benchmark()
 
 	for name, fn in pairs(mtbench.benchmarks) do
 		local bench_time = 1
-		local iterations = 5
+		local iterations = 1
+		print("[mtbench] executing benchmark '" .. name .. "'")
 		local min, max
 		local avg = 0
 		for _=1,iterations do
+			collectgarbage("collect")
 			local executeCondition = createExecutionCondition(bench_time)
 			local result = fn(executeCondition)
 			if not min or result < min then
